@@ -5,7 +5,7 @@ import UserProfile from "./UserProfile";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<BMI />} />
+      <Route path="/BMI" element={<BMI />} />
       <Route path="/profile" element={<UserProfile />} />
     </Routes>
   );
