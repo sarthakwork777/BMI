@@ -1,13 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import BMI from "./BMI";
 import UserProfile from "./UserProfile";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/BMI" element={<BMI />} />
-      <Route path="/profile" element={<UserProfile />} />
-    </Routes>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<BMI />} />
+        <Route path="/#/profile" element={<UserProfile />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
