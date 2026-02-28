@@ -7,7 +7,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<BMI />} />
-        <Route path="/#/profile" element={<UserProfile />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
     </HashRouter>
   );
