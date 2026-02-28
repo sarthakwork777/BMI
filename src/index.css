@@ -1,5 +1,4 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,11 +13,10 @@
 }
 
 * {
-  font-family: "Bpmf Zihi Kai Std", sans-serif;
+  font-family: "Aboreto", system-ui;
   font-weight: 400;
   font-style: normal;
 }
-
 
 a {
   font-weight: 500;
@@ -48,7 +46,6 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;

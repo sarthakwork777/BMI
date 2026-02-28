@@ -56,7 +56,7 @@ const BMI = () => {
   };
 
   return (
-    <div className="fixed inset-0 min-h-screen w-screen flex items-center justify-center p-4 bg-gradient-to-tr via-black to-rose-600 font-sans overflow-hidden">
+    <div className="fixed inset-0 min-h-screen w-screen flex items-center justify-center p-4 bg-gradient-to-tr via-black to-rose-600 overflow-hidden">
 
       {/* Background Effects */}
       <div className="absolute top-[-10%] left-[-5%] w-[60vw] h-[60vw] bg-orange-400/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
