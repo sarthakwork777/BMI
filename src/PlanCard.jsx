@@ -1,4 +1,3 @@
-import React from "react";
 import { Dumbbell, Target, Flame, Zap, ChevronRight, Info } from "lucide-react";
 
 const PlanCard = () => {
@@ -34,45 +33,77 @@ const PlanCard = () => {
   ];
 
   return (
-    /* w-full ensures it stretches to the parent's edges. 
-       gap-4 provides a small modern gutter between cards. */
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 pb-10">
       {plans.map((plan, index) => (
-        <div 
-          key={index} 
-          className={`group relative backdrop-blur-3xl bg-white/5 border ${plan.accent} rounded-[2rem] p-8 hover:bg-white/[0.08] transition-all duration-500 flex flex-col h-full w-full`}
+        <div
+          key={index}
+          className={`group relative backdrop-blur-3xl bg-white/5 border ${plan.accent} rounded-[2rem] p-6 hover:bg-white/[0.08] transition-all duration-500 flex flex-col min-h-[60px] max-h-[550px] w-full bottom-6 hover:cursor-pointer`}
         >
-          {/* Icon & Description */}
           <div className="mb-8">
-            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500">
+            <div className="w-full h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10 group-hover:scale-105 group-hover:bg-white/10 transition-all duration-500">
               {plan.icon}
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-2">
-                {plan.tag}
+              {plan.tag}
             </p>
             <h3 className="text-2xl font-black tracking-tight mb-3 group-hover:text-orange-400 transition-colors">
-                {plan.title}
+              {plan.title}
             </h3>
             <p className="text-white/40 text-sm leading-relaxed font-medium">
               {plan.desc}
             </p>
           </div>
-
-          {/* Action Buttons */}
           <div className="mt-auto space-y-4">
-            <button className="group/btn w-full py-4 bg-white text-black font-black text-xs uppercase tracking-widest rounded-2xl hover:bg-orange-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-xl">
-              Get This Plan
-              <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-            </button>
-            
-            <button className="w-full flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition-all">
-              <Info size={12} /> View Details
-            </button>
-          </div>
+            {/* PRIMARY BUTTON */}
+<button
+  className="relative group w-full py-3 px-6 
+  rounded-2xl overflow-hidden
+  bg-gradient-to-r from-orange-500 via-rose-500 to-red-500
+  text-white font-bold text-xs uppercase tracking-[0.2em]
+  flex items-center justify-center gap-2
+  shadow-[0_10px_30px_rgba(255,60,0,0.35)]
+  transition-all duration-300
+  hover:scale-[1.03] hover:shadow-[0_15px_40px_rgba(255,0,60,0.5)]
+  active:scale-[0.97]"
+>
 
-          {/* Animated Hover Indicator */}
+  {/* Shine Effect */}
+  <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+  <span className="absolute -left-20 top-0 w-40 h-full bg-white/20 rotate-12 
+  group-hover:translate-x-[250%] transition-all duration-700 ease-in-out"></span>
+
+  <span className="relative z-10">Get This Plan</span>
+  <ChevronRight
+    size={16}
+    className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+  />
+</button>
+
+
+{/* SECONDARY BUTTON */}
+<button
+  className="relative group w-full py-3 px-6
+  rounded-2xl
+  border border-white/20
+  backdrop-blur-xl
+  bg-white/5
+  text-white/80 font-semibold text-xs uppercase tracking-[0.2em]
+  flex items-center justify-center gap-2
+  transition-all duration-300
+  hover:text-white
+  hover:bg-white/10
+  hover:border-orange-400/40
+  hover:shadow-[0_0_25px_rgba(255,120,0,0.35)]
+  active:scale-[0.97]"
+>
+  <Info
+    size={14}
+    className="transition-transform duration-300 group-hover:rotate-6"
+  />
+  View Details
+</button>
+          </div>
           <div className="absolute top-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-             <div className="h-1.5 w-1.5 rounded-full bg-orange-500 animate-pulse"></div>
           </div>
         </div>
       ))}
